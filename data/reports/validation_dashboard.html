@@ -1,0 +1,173 @@
+
+    <html>
+    <head>
+        <title>Optimus Vision Dataset Validation Dashboard</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+            .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+            .grid { display: grid; grid-template-columns: repeat(2, minmax(300px, 1fr)); gap: 20px; }
+            img { width: 100%; max-width: 720px; border: 1px solid #ddd; }
+            code, pre { background: #f7f7f7; padding: 12px; display: block; overflow-x: auto; }
+            table { border-collapse: collapse; width: 100%; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        </style>
+    </head>
+    <body>
+        <h1>Optimus Vision Dataset Validation Dashboard</h1>
+        <div class="card">
+            <h2>Executive Summary</h2>
+            <p><strong>Rows:</strong> 500</p>
+            <p><strong>Total Issues:</strong> 16</p>
+            <p><strong>Severity:</strong> medium</p>
+        </div>
+        <div class="grid">
+            <div class="card"><h3>Task Distribution</h3><img src="class_distribution.png" /></div>
+            <div class="card"><h3>Split Distribution</h3><img src="split_distribution.png" /></div>
+            <div class="card"><h3>Scenario Distribution</h3><img src="scenario_distribution.png" /></div>
+            <div class="card"><h3>Validation Issue Summary</h3><img src="issue_summary.png" /></div>
+        </div>
+        <div class="card">
+            <h2>Validation Results (JSON)</h2>
+            <pre>{
+  "row_count": 500,
+  "column_check": {
+    "passed": true,
+    "missing_columns": []
+  },
+  "missing_labels": {
+    "count": 1,
+    "rows": [
+      {
+        "image_id": "img_00003",
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00003.png"
+      }
+    ]
+  },
+  "duplicate_ids": {
+    "count": 2,
+    "rows": [
+      {
+        "image_id": "img_00001",
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00001.png"
+      },
+      {
+        "image_id": "img_00001",
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00004.png"
+      }
+    ]
+  },
+  "missing_files": {
+    "count": 1,
+    "rows": [
+      {
+        "image_id": "img_00005",
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/missing_img.png"
+      }
+    ]
+  },
+  "blurry_images": {
+    "count": 11,
+    "threshold": 25.0,
+    "rows": [
+      {
+        "image_id": "img_00006",
+        "blur_score": 5.0,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00006.png"
+      },
+      {
+        "image_id": "img_00019",
+        "blur_score": 18.707,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00019.png"
+      },
+      {
+        "image_id": "img_00052",
+        "blur_score": 19.45,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00052.png"
+      },
+      {
+        "image_id": "img_00127",
+        "blur_score": 22.41,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00127.png"
+      },
+      {
+        "image_id": "img_00143",
+        "blur_score": 21.686,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00143.png"
+      },
+      {
+        "image_id": "img_00152",
+        "blur_score": 23.89,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00152.png"
+      },
+      {
+        "image_id": "img_00221",
+        "blur_score": 16.729,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00221.png"
+      },
+      {
+        "image_id": "img_00240",
+        "blur_score": 13.367,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00240.png"
+      },
+      {
+        "image_id": "img_00432",
+        "blur_score": 17.366,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00432.png"
+      },
+      {
+        "image_id": "img_00449",
+        "blur_score": 18.59,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00449.png"
+      },
+      {
+        "image_id": "img_00462",
+        "blur_score": 22.716,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00462.png"
+      }
+    ]
+  },
+  "tiny_boxes": {
+    "count": 1,
+    "threshold": 0.03,
+    "rows": [
+      {
+        "image_id": "img_00007",
+        "bbox_area_ratio": 0.01,
+        "file_path": "/mnt/data/optimus_vision_dataset_pipeline/data/raw/images/img_00007.png"
+      }
+    ]
+  },
+  "class_distribution": {
+    "inspect": 119,
+    "sit": 108,
+    "walk": 100,
+    "reach": 92,
+    "lift": 81
+  },
+  "split_distribution": {
+    "train": 298,
+    "test": 111,
+    "val": 91
+  },
+  "scenario_distribution": {
+    "outdoor_test": 136,
+    "warehouse": 125,
+    "lab": 123,
+    "factory_floor": 116
+  },
+  "summary": {
+    "total_issues": 16,
+    "severity": "medium",
+    "issue_counts": {
+      "missing_labels": 1,
+      "duplicate_ids": 2,
+      "missing_files": 1,
+      "blurry_images": 11,
+      "tiny_boxes": 1
+    }
+  }
+}</pre>
+        </div>
+    </body>
+    </html>
+    
